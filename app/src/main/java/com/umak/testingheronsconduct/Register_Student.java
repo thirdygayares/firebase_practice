@@ -271,6 +271,8 @@ public class Register_Student extends AppCompatActivity implements AdapterView.O
                                                 addStudents.put("contact_num", ContactNumSTU);
                                                 addStudents.put("umak_email", UmakEmailSTU);
                                                 addStudents.put("image", uri);
+                                                addStudents.put("college", "CCIS");
+
 
                                                 //TODO add the other data
 
