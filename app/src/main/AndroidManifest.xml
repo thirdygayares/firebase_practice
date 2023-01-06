@@ -4,6 +4,10 @@
     package="com.umak.testingheronsconduct">
 
     <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -11,11 +15,15 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.HeronsConduct"
         android:supportsRtl="true"
         tools:targetApi="31">
+
+        <activity
+            android:name=".Register"
+            android:exported="false"/>
 
         <activity
             android:name=".Register_Student"
@@ -26,7 +34,7 @@
             android:exported="false"/>
 
         <activity
-            android:name=".Register"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

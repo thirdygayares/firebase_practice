@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".StudentNotifFragment"
+    android:background="@color/Background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <GridLayout
+                android:id="@+id/grid_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:rowCount="8"
+                android:columnCount="1"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/sampleNotif1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardElevation="8dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/disc_record_icon"
+                            android:background="@drawable/circle"
+                            android:layout_gravity="start"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Settled!"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/metropolis_semi_bold"
+                                android:textAlignment="textStart"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Your conflict has been settled!"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:fontFamily="@font/metropolis_regular"
+                                android:textAlignment="textStart"/>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/sampleNotif2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardElevation="8dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/reqs_gm_cert_icon"
+                            android:background="@drawable/circle"
+                            android:layout_gravity="left"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ready to Pickup."
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/metropolis_semi_bold"
+                                android:textAlignment="textStart"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Your request has been approved."
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:fontFamily="@font/metropolis_regular"
+                                android:textAlignment="textStart"/>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/sampleNotif3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_row="3"
+                    android:layout_column="0"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardElevation="8dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/view_announcements_icon"
+                            android:background="@drawable/circle"
+                            android:layout_gravity="start"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CSFD Webinar!"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/metropolis_semi_bold"
+                                android:textAlignment="textStart"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="The Center for Student Formati..."
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:fontFamily="@font/metropolis_regular"
+                                android:textAlignment="textStart"/>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/sampleNotif4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_row="4"
+                    android:layout_column="0"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardElevation="8dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/accountabilities_icon"
+                            android:background="@drawable/circle"
+                            android:layout_gravity="start"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Call to Action!"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/metropolis_semi_bold"
+                                android:textAlignment="textStart"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="The Center for Student Formati..."
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:fontFamily="@font/metropolis_regular"
+                                android:textAlignment="textStart"/>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/sampleNotif5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_row="5"
+                    android:layout_column="0"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardElevation="8dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/disc_record_icon"
+                            android:background="@drawable/circle"
+                            android:layout_gravity="start"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Please settle."
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/metropolis_semi_bold"
+                                android:textAlignment="textStart"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Your conflict has been reviewed..."
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:fontFamily="@font/metropolis_regular"
+                                android:textAlignment="textStart"/>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/sampleNotif6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_row="6"
+                    android:layout_column="0"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardElevation="8dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/reqs_gm_cert_icon"
+                            android:background="@drawable/circle"
+                            android:layout_gravity="start"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Please settle."
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/metropolis_semi_bold"
+                                android:textAlignment="textStart"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Your conflict has been reviewed..."
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:fontFamily="@font/metropolis_regular"
+                                android:textAlignment="textStart"/>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/sampleNotif7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_row="7"
+                    android:layout_column="0"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardElevation="8dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/view_announcements_icon"
+                            android:background="@drawable/circle"
+                            android:layout_gravity="start"/>
+
+                        <LinearLayout
+                            android:id="@+id/notifications_settings_tab"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Random Drug Testing."
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/metropolis_semi_bold"
+                                android:textAlignment="textStart"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="The Center for Student Formati..."
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:fontFamily="@font/metropolis_regular"
+                                android:textAlignment="textStart"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

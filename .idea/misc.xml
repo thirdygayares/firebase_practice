@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/activity_login.xml" value="0.20625" />
         <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/activity_register_student.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/activity_register_student.xml" value="0.3209302325581395" />
         <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/custom_dialog.xml" value="0.1796875" />
         <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/custom_dialog_error.xml" value="0.1796875" />
+        <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/fragment_reporter_settings.xml" value="0.5" />
+        <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/fragment_student_c_s_f_d_portal.xml" value="0.1796875" />
+        <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/fragment_student_home.xml" value="0.1796875" />
+        <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/fragment_student_notif.xml" value="0.1796875" />
+        <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/layout/fragment_student_settings.xml" value="0.25" />
         <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1796875" />
         <entry key="..\:/Users/gayar/AndroidStudioProjects/TestingHeronsConduct/app/src/main/res/menu/student_parent_nav_menu.xml" value="0.35989583333333336" />
       </map>

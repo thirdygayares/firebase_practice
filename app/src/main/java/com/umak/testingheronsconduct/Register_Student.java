@@ -1,13 +1,16 @@
 package com.umak.testingheronsconduct;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -18,16 +21,24 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import org.w3c.dom.Text;
 
@@ -43,18 +54,22 @@ public class Register_Student extends AppCompatActivity implements AdapterView.O
 
     ImageButton cancelButton, cancelButtonError;
     Button ok_btn, ok_btnError;
-    
+    ImageView img_profile;
+
+
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+    StorageReference storageReference = firebaseStorage.getReference();
 
-
+    Uri uri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_student);
 
-        reg_stu();
+
 
 
         dateButton = findViewById(R.id.birthdateStudent);
@@ -85,11 +100,16 @@ public class Register_Student extends AppCompatActivity implements AdapterView.O
         spinner3.setAdapter(adapter3);
         spinner3.setOnItemSelectedListener(this);
 
+
+
         //comment
         initDatePicker();
 
         //registerMethod
-        registerMethod();
+        reg_stu();
+
+        //upload photo
+        uploadPhotoMethod();
 
 
 
@@ -108,15 +128,41 @@ public class Register_Student extends AppCompatActivity implements AdapterView.O
 
     }
 
-    private void registerMethod() {
-        //TODO : get all the data requirements
+    private void uploadPhotoMethod() {
+        img_profile = findViewById(R.id.img_profile);
 
+        img_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uploadPhoto();
+            }
 
-
-
-
+            private void uploadPhoto() {
+                ImagePicker.with(Register_Student.this)
+                        .galleryOnly()
+                        .crop()
+                        .compress(1024)
+                        .maxResultSize(1080,1080)
+                        .start();
+            }
+        });
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            //Image Uri will not be null for RESULT_OK
+             uri = data.getData();
+             img_profile.setImageURI(uri);
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
+            Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     private String getTodaysDate() {
         Calendar cal = Calendar.getInstance();
@@ -144,7 +190,7 @@ public class Register_Student extends AppCompatActivity implements AdapterView.O
         Spinner edtCourseSTU = findViewById(R.id.courseStudent);
         EditText edtPasswordSTU = findViewById(R.id.passwordStudent);
         EditText edtConfirmPasswordSTU = findViewById(R.id.ConfirmPassword_Student);
-
+        ProgressBar progressBar =  findViewById(R.id.progressbar);
 
         Button reg_stu = findViewById(R.id.Register_STU);
         reg_stu.setOnClickListener(new View.OnClickListener() {
@@ -193,7 +239,7 @@ public class Register_Student extends AppCompatActivity implements AdapterView.O
                     firebaseAuth.createUserWithEmailAndPassword(UmakEmailSTU, ConfirmPasswordSTU).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
-
+                            progressBar.setVisibility(View.VISIBLE);
                             HashMap<String, Object> addData = new HashMap<>();
                             addData.put("type", type.Account);
 
@@ -203,14 +249,29 @@ public class Register_Student extends AppCompatActivity implements AdapterView.O
                                         @Override
                                         public void onSuccess(Void unused) {
 
-                                            //add data to table of Parent, Student and Reporter
+                                        }
+                                    });
 
+                            //upload piture image
+                            StorageReference uploadProfile = storageReference.child("UserDp/" + FNameSTU);
+
+                            uploadProfile.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                @Override
+                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                    progressBar.setVisibility(View.GONE);
+                                    //add data to table of Parent, Student and Reporter
+
+                                    uploadProfile.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                        @Override
+                                        public void onSuccess(Uri uri) {
                                             if(type.Account.equalsIgnoreCase("student")){
 
                                                 HashMap<String, Object> addStudents = new HashMap<>();
                                                 addStudents.put("first_name", FNameSTU);
                                                 addStudents.put("contact_num", ContactNumSTU);
                                                 addStudents.put("umak_email", UmakEmailSTU);
+                                                addStudents.put("image", uri);
+
                                                 //TODO add the other data
 
                                                 firebaseFirestore.collection("Student").document(firebaseAuth.getUid())
@@ -221,15 +282,32 @@ public class Register_Student extends AppCompatActivity implements AdapterView.O
                                                                 Toast.makeText(getApplicationContext(), "SUCCESS UPLOAD DATA", Toast.LENGTH_SHORT).show();
                                                             }
                                                         });
-                                                
-                                            }else if(type.Account.equalsIgnoreCase("parent")){
+
+                                            }
+                                            else if(type.Account.equalsIgnoreCase("parent")){
                                                 //TODO : add data in Parent Table
                                             }else if(type.Account.equalsIgnoreCase("reporter")){
                                                 //TODO : add data in Report
                                             }
-
                                         }
                                     });
+
+
+
+
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                                }
+                            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                                @Override
+                                public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                                    progressBar.setVisibility(View.VISIBLE);
+                                }
+                            });
 
 
                         }
@@ -240,6 +318,9 @@ public class Register_Student extends AppCompatActivity implements AdapterView.O
                             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
+
+
+
 
                     openDialog();
                 }
