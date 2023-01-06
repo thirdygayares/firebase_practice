@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">Herons\' Conduct</string>
+
+    //Headings
+    <string name="heading_1">Accountability\nand\nViolation Manager</string>
+    <string name="heading_2">Seamless Access</string>
+    <string name="heading_3">Accountabilities\nand\nRecords</string>
+    <string name="heading_4">Statistics\nand\nReports</string>
+
+    //Descriptions
+    <string name="desc_1">Easily document violations \nand accountabilities</string>
+    <string name="desc_2">View disciplinary record \nand history easily</string>
+    <string name="desc_3">Update and notify student \naccountabilities and records</string>
+    <string name="desc_4">Track trends\nand analyze data</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text1">The Center for Student\nFormation and Discipline\n(CSFD) will be having its 1st\nDiscipline Awareness Week on\nSeptember with theme...</string>
+    <string name="text2">Please be informed that the issuance of Good Moral Certificate has been transferred to this office (Center for Student Formation and Discipline).</string>
+    <string name="text3">FINAL CALL TO ALL CURRENTLY ENROLLED GRADE 11, FRESHMEN AND TRANSFEREES (Academic Year 2021–2022).</string>
+    <string name="text4">RESCHEDULED: Make sure to accomplish the Faculty Evaluation until July 18, 11:59 PM via https://umak.edu.ph/olfe.</string>
+    <string name="placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at ullamcorper neque. Praesent a dui non lorem convallis porta imperdiet at elit. Cras vehicula non ligula et sollicitudin. Fusce a neque aliquam, placerat lectus sed, consequat mauris. Sed sit amet purus erat. Quisque in posuere tortor, ac rhoncus diam. Morbi hendrerit efficitur elit nec posuere. Morbi pharetra feugiat mi, in lacinia magna varius in. Aenean dictum feugiat ornare. Praesent commodo ante sit amet ante euismod fringilla. Nulla gravida varius metus, in auctor neque rutrum sed.</string>
+
+
+    <!--ARRAY LIST FOR DROPDOWN -->
+    <string-array name="genders">
+        <item>Genders</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="colleges">
+        <item>Colleges</item>
+        <item>Allied Health Studies</item>
+        <item>Arts and Letters</item>
+        <item>College of Human Kinetics</item>
+        <item>Business and Financial Science</item>
+        <item>Continuing, Advanced and Professional Studies</item>
+        <item>Computer Science</item>
+        <item>Construction Sciences and Engineering</item>
+        <item>Education</item>
+        <item>Governance and Public Policy</item>
+        <item>Education</item>
+        <item>Governance and Public Policy</item>
+        <item>Maritime Leadership Innovation</item>
+        <item>Sciences</item>
+        <item>Technology Management</item>
+        <item>Tourism and Hospitality Management</item>
+    </string-array>
+
+    <string-array name="year">
+        <item>Year</item>
+        <item>1st year</item>
+        <item>2nd year</item>
+        <item>3rd year</item>
+        <item>4th year</item>
+    </string-array>
+
+    <string-array name="courses">
+        <item>Courses</item>
+        <item>Application Development</item>
+        <item>Social Computing</item>
+        <item>Diploma in Application Development</item>
+        <item>Diploma in Computer Network Administration</item>
+        <item>Bachelor of Science in Computational and Data Sciences</item>
+        <item>Bachelor of Science in Information Technology Major in Information and Network Security</item>
+    </string-array>
+
+
+</resources>
